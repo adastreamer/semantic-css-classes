@@ -1,5 +1,5 @@
 {
-  "name": "semantic-css",
+  "name": "semantic-css-helpers",
   "version": "1.0.0",
   "description": "A set of css helper classes",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/adastreamer/semantic-css.git"
+    "url": "git+ssh://git@github.com/adastreamer/semantic-css-helpers.git"
   },
   "keywords": [
     "semantic",
@@ -23,14 +23,38 @@
   "author": "Eugene Khashin <adastreamer@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adastreamer/semantic-css/issues"
+    "url": "https://github.com/adastreamer/semantic-css-helpers/issues"
   },
-  "homepage": "https://github.com/adastreamer/semantic-css#readme",
+  "homepage": "https://github.com/adastreamer/semantic-css-helpers#readme",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-scss": "^1.3.17",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "chai": "^3.5.0",
+    "gulp-karma": "0.0.5",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.3",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-requirejs": "^0.2.6",
+    "karma-sinon": "^1.0.4",
+    "karma-tap": "^1.0.4",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.7",
+    "quixote": "^0.11.0",
+    "requirejs": "^2.2.0",
+    "sinon": "^1.17.3",
+    "watchify": "^3.7.0"
   }
 }
