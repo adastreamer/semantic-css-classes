@@ -1,0 +1,32 @@
+{
+  "name": "semantic-css",
+  "version": "1.0.0",
+  "authors": [
+    "Eugene Khashin <adastreamer@gmail.com>"
+  ],
+  "description": "A set of css helper classes",
+  "main": "bin/semantic-css.min.css",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "semantic",
+    "css",
+    "framework",
+    "helpers",
+    "scss",
+    "class",
+    "margin",
+    "padding",
+    "position"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/adastreamer/semantic-css",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

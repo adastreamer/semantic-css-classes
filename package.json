@@ -1,0 +1,33 @@
+{
+  "name": "semantic-css",
+  "version": "1.0.0",
+  "description": "A set of css helper classes",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/adastreamer/semantic-css.git"
+  },
+  "keywords": [
+    "semantic",
+    "css",
+    "framework",
+    "helpers",
+    "scss",
+    "class",
+    "margin",
+    "padding",
+    "position"
+  ],
+  "author": "Eugene Khashin <adastreamer@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adastreamer/semantic-css/issues"
+  },
+  "homepage": "https://github.com/adastreamer/semantic-css#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7"
+  }
+}
