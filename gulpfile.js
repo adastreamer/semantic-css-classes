@@ -10,7 +10,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./scss/index.scss')
+  return gulp.src('./scss/index.sass')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(rename('semantic-css-helpers.min.css'))
