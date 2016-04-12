@@ -16,7 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test/index.spec.js',
-      'bin/semantic-css-helpers.min.css'
+      'bin/semantic-css-classes.min.css'
     ],
 
 

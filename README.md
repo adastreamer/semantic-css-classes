@@ -42,6 +42,7 @@ or manually connect the css
 
 - fork repo, create a branch for feature
 - write tests, do code
+- compile css via `gulp sass`
 - run `karma start` and be sure that all tests are passed
 - do PR
 

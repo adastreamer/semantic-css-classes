@@ -1,5 +1,5 @@
 {
-  "name": "semantic-css-helpers",
+  "name": "semantic-css-classes",
   "version": "1.0.0",
   "description": "A set of css helper classes",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/adastreamer/semantic-css-helpers.git"
+    "url": "git+ssh://git@github.com/adastreamer/semantic-css-classes.git"
   },
   "keywords": [
     "semantic",
@@ -23,9 +23,9 @@
   "author": "Eugene Khashin <adastreamer@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adastreamer/semantic-css-helpers/issues"
+    "url": "https://github.com/adastreamer/semantic-css-classes/issues"
   },
-  "homepage": "https://github.com/adastreamer/semantic-css-helpers#readme",
+  "homepage": "https://github.com/adastreamer/semantic-css-classes#readme",
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",

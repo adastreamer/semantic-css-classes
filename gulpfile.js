@@ -13,7 +13,7 @@ gulp.task('sass', function () {
   return gulp.src('./scss/index.sass')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(rename('semantic-css-helpers.min.css'))
+    .pipe(rename('semantic-css-classes.min.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./bin'));
 });

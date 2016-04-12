@@ -18,7 +18,7 @@ describe("Main behaviour", function() {
 
   before(function(done) {
     frame = quixote.createFrame({
-      stylesheet: "/base/bin/semantic-css-helpers.min.css"
+      stylesheet: "/base/bin/semantic-css-classes.min.css"
     }, done);
   });
 
