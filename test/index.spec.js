@@ -108,26 +108,38 @@ describe("Main behaviour", function() {
     });
 
     // ALIGNMENTS
+    frame.add("<div style='display: inline-block' class='v-a-t'></div>");
+    frame.add("<div style='display: inline-block' class='v-a-m'></div>");
+    frame.add("<div style='display: inline-block' class='v-a-b'></div>");
+
+    frame.add("<div style='display: inline-block' class='v-a-ti'></div>");
+    frame.add("<div style='display: inline-block' class='v-a-mi'></div>");
+    frame.add("<div style='display: inline-block' class='v-a-bi'></div>");
+
+    frame.add("<div style='display: inline-block' class='t-a-l'></div>");
+    frame.add("<div style='display: inline-block' class='t-a-c'></div>");
+    frame.add("<div style='display: inline-block' class='t-a-r'></div>");
+
+    frame.add("<div style='display: inline-block' class='t-a-li'></div>");
+    frame.add("<div style='display: inline-block' class='t-a-ci'></div>");
+    frame.add("<div style='display: inline-block' class='t-a-ri'></div>");
+    // END ALIGNMENTS
+
+    // DISPLAY
+    frame.add("<div class='d-b'></div>");
+    frame.add("<div class='d-i'></div>");
+    frame.add("<div class='d-ib'></div>");
+
     frame.add("<style> \
-      .d-ib{ display: inline-block; } \
+      .d-bi{ display: none; } \
+      .d-ii{ display: none; } \
+      .d-ibi{ display: none; } \
     </style>");
 
-    frame.add("<div class='d-ib v-a-t'></div>");
-    frame.add("<div class='d-ib v-a-m'></div>");
-    frame.add("<div class='d-ib v-a-b'></div>");
-
-    frame.add("<div class='d-ib v-a-ti'></div>");
-    frame.add("<div class='d-ib v-a-mi'></div>");
-    frame.add("<div class='d-ib v-a-bi'></div>");
-
-    frame.add("<div class='d-ib t-a-l'></div>");
-    frame.add("<div class='d-ib t-a-c'></div>");
-    frame.add("<div class='d-ib t-a-r'></div>");
-
-    frame.add("<div class='d-ib t-a-li'></div>");
-    frame.add("<div class='d-ib t-a-ci'></div>");
-    frame.add("<div class='d-ib t-a-ri'></div>");
-    // END ALIGNMENTS
+    frame.add("<div class='d-bi'></div>");
+    frame.add("<div class='d-ii'></div>");
+    frame.add("<div class='d-ibi'></div>");
+    // END DISPLAY
 
     alreadyFilled = true;
   });
@@ -191,6 +203,16 @@ describe("Main behaviour", function() {
     assert.equal(frame.get(".t-a-li").getRawStyle("text-align"), "left");
     assert.equal(frame.get(".t-a-ci").getRawStyle("text-align"), "center");
     assert.equal(frame.get(".t-a-ri").getRawStyle("text-align"), "right");
+  });
+
+  it("has right display props", function(){
+    assert.equal(frame.get(".d-b").getRawStyle("display"), "block");
+    assert.equal(frame.get(".d-i").getRawStyle("display"), "inline");
+    assert.equal(frame.get(".d-ib").getRawStyle("display"), "inline-block");
+
+    assert.equal(frame.get(".d-bi").getRawStyle("display"), "block");
+    assert.equal(frame.get(".d-ii").getRawStyle("display"), "inline");
+    assert.equal(frame.get(".d-ibi").getRawStyle("display"), "inline-block");
   });
 
 });

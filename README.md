@@ -57,6 +57,14 @@ if you add the `i` char after the classname, eg. `b-20i`, the style will be appl
 
 `t-a-r` = `text-align: right;`, `t-a-ri` = `text-align: right !important;`
 
+### display
+
+`d-b` = `display: block;`, `d-bi` = `display: block !importnt;`
+
+`d-i` = `display: block;`, `d-ii` = `display: inline !importnt;`
+
+`d-ib` = `display: block;`, `d-ibi` = `display: inline-block !importnt;`
+
 ## installation
 
 via bower
