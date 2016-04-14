@@ -10,7 +10,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./scss/index.sass')
+  return gulp.src('./sass/index.sass')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(rename('semantic-css-classes.min.css'))
@@ -19,7 +19,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch('./scss/**/*.scss', ['sass']);
+  gulp.watch('./sass/**/*.sass', ['sass']);
 });
 
 gulp.task('test', function (done) {

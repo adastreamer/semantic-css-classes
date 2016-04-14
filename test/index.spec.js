@@ -26,51 +26,88 @@ describe("Main behaviour", function() {
     frame.remove();
   });
 
+  var alreadyFilled = false;
+
   beforeEach(function() {
+    if (alreadyFilled){
+      return;
+    }
+
     frame.reset();
 
     // PADDING
-    positiveNumbers.forEach(function(i){ div = "<div class='p-l-" + i + "'></div>"; frame.add(div); });
-    positiveNumbers.forEach(function(i){ div = "<div class='p-r-" + i + "'></div>"; frame.add(div); });
-    positiveNumbers.forEach(function(i){ div = "<div class='p-t-" + i + "'></div>"; frame.add(div); });
-    positiveNumbers.forEach(function(i){ div = "<div class='p-b-" + i + "'></div>"; frame.add(div); });
+    positiveNumbers.forEach(function(i){
+      frame.add("<div class='p-l-" + i + "'></div>");
+      frame.add("<div class='p-r-" + i + "'></div>");
+      frame.add("<div class='p-t-" + i + "'></div>");
+      frame.add("<div class='p-b-" + i + "'></div>");
+
+      // with !important
+      // add some incorrect styles to be sure that !important works properly
+      frame.add("<style> \
+        .p-l-" + i + "i{ padding-left: 987789px; } \
+        .p-r-" + i + "i{ padding-right: 987789px; } \
+        .p-t-" + i + "i{ padding-top: 987789px; } \
+        .p-b-" + i + "i{ padding-bottom: 987789px; } \
+      </style>");
+
+      frame.add("<div class='p-l-" + i + "i'></div>");
+      frame.add("<div class='p-r-" + i + "i'></div>");
+      frame.add("<div class='p-t-" + i + "i'></div>");
+      frame.add("<div class='p-b-" + i + "i'></div>");
+    });
  
     // MARGIN
-    numbers.forEach(function(i){ div = "<div class='m-l-" + i + "'></div>"; frame.add(div); });
-    numbers.forEach(function(i){ div = "<div class='m-r-" + i + "'></div>"; frame.add(div); });
-    numbers.forEach(function(i){ div = "<div class='m-t-" + i + "'></div>"; frame.add(div); });
-    numbers.forEach(function(i){ div = "<div class='m-b-" + i + "'></div>"; frame.add(div); });
+    numbers.forEach(function(i){
+      frame.add("<div class='m-l-" + i + "'></div>");
+      frame.add("<div class='m-r-" + i + "'></div>");
+      frame.add("<div class='m-t-" + i + "'></div>");
+      frame.add("<div class='m-b-" + i + "'></div>");
+
+      // with !important
+      // add some incorrect styles to be sure that !important works properly
+      frame.add("<style> \
+        .m-l-" + i + "i{ margin-left: 987789px; } \
+        .m-r-" + i + "i{ margin-right: 987789px; } \
+        .m-t-" + i + "i{ margin-top: 987789px; } \
+        .m-b-" + i + "i{ margin-bottom: 987789px; } \
+      </style>");
+
+      frame.add("<div class='m-l-" + i + "i'></div>");
+      frame.add("<div class='m-r-" + i + "i'></div>");
+      frame.add("<div class='m-t-" + i + "i'></div>");
+      frame.add("<div class='m-b-" + i + "i'></div>");
+    });
+
+    alreadyFilled = true;
   });
 
 
   positiveNumbers.forEach(function(i){
-    it("has padding-left offsets", function(){
+    it("has right paddings", function(){
       assert.equal(frame.get(".p-l-" + i).getRawStyle("padding-left"), i + "px");
-    });
-    it("has padding-right offsets", function(){
       assert.equal(frame.get(".p-r-" + i).getRawStyle("padding-right"), i + "px");
-    });
-    it("has padding-top offsets", function(){
       assert.equal(frame.get(".p-t-" + i).getRawStyle("padding-top"), i + "px");
-    });
-    it("has padding-bottom offsets", function(){
       assert.equal(frame.get(".p-b-" + i).getRawStyle("padding-bottom"), i + "px");
+
+      assert.equal(frame.get(".p-l-" + i + 'i').getRawStyle("padding-left"), i + "px");
+      assert.equal(frame.get(".p-r-" + i + 'i').getRawStyle("padding-right"), i + "px");
+      assert.equal(frame.get(".p-t-" + i + 'i').getRawStyle("padding-top"), i + "px");
+      assert.equal(frame.get(".p-b-" + i + 'i').getRawStyle("padding-bottom"), i + "px");
     });
   });
 
-
   numbers.forEach(function(i){
-    it("has margin-left offsets", function(){
+    it("has right margins", function(){
       assert.equal(frame.get(".m-l-" + i).getRawStyle("margin-left"), i + "px");
-    });
-    it("has margin-right offsets", function(){
       assert.equal(frame.get(".m-r-" + i).getRawStyle("margin-right"), i + "px");
-    });
-    it("has margin-top offsets", function(){
       assert.equal(frame.get(".m-t-" + i).getRawStyle("margin-top"), i + "px");
-    });
-    it("has margin-bottom offsets", function(){
       assert.equal(frame.get(".m-b-" + i).getRawStyle("margin-bottom"), i + "px");
+
+      assert.equal(frame.get(".m-l-" + i + 'i').getRawStyle("margin-left"), i + "px");
+      assert.equal(frame.get(".m-r-" + i + 'i').getRawStyle("margin-right"), i + "px");
+      assert.equal(frame.get(".m-t-" + i + 'i').getRawStyle("margin-top"), i + "px");
+      assert.equal(frame.get(".m-b-" + i + 'i').getRawStyle("margin-bottom"), i + "px");
     });
   });
 

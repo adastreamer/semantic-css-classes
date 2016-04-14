@@ -1,0 +1,53 @@
+// PADDINGS
+@for $i from 0 through $end
+  .p-l-#{$i * $step}
+    padding-left: 0px + $i * $step
+
+  .p-r-#{$i * $step}
+    padding-right: 0px + $i * $step
+
+  .p-t-#{$i * $step}
+    padding-top: 0px + $i * $step
+
+  .p-b-#{$i * $step}
+    padding-bottom: 0px + $i * $step
+
+  // !important
+  .p-l-#{$i * $step}i
+    padding-left: 0px + $i * $step !important
+
+  .p-r-#{$i * $step}i
+    padding-right: 0px + $i * $step !important
+
+  .p-t-#{$i * $step}i
+    padding-top: 0px + $i * $step !important
+
+  .p-b-#{$i * $step}i
+    padding-bottom: 0px + $i * $step !important
+
+// MARGIN-LEFT
+@for $i from $start through $end
+  .m-l-#{$i * $step}
+    margin-left: 0px + $i * $step
+
+  .m-r-#{$i * $step}
+    margin-right: 0px + $i * $step
+
+  .m-t-#{$i * $step}
+    margin-top: 0px + $i * $step
+
+  .m-b-#{$i * $step}
+    margin-bottom: 0px + $i * $step
+
+  // !important
+  .m-l-#{$i * $step}i
+    margin-left: 0px + $i * $step !important
+
+  .m-r-#{$i * $step}i
+    margin-right: 0px + $i * $step !important
+
+  .m-t-#{$i * $step}i
+    margin-top: 0px + $i * $step !important
+
+  .m-b-#{$i * $step}i
+    margin-bottom: 0px + $i * $step !important
