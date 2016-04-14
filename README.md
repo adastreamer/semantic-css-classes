@@ -49,5 +49,4 @@ or manually connect the css
 ## TODO
 
 - position helpers: left, right, top, bottom. I believe they're: `l`, `r`, `t`, `b`
-- `!important` feature: all classes should be available with `!important` postfix (i guess it should be something like `p-l-20i`)
 - support other than `px` dimentions: percent, em, etc.
