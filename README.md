@@ -32,7 +32,15 @@ in class `p-[d]-[x]`:
 
 if you add the `i` char after the classname, eg. `p-b-20i`, the style will be applied with `!important` postfix.
 
-### position
+### positions
+
+`p-a` = `position: absolute;`, `p-ai` = `position: absolute !important;`
+
+`p-r` = `position: relative;`, `p-ri` = `position: relative !important;`
+
+`p-f` = `position: fixed;`, `p-fi` = `position: fixed !important;`
+
+### left, right, top, bottom
 
 in class `[d]-[x]`:
 

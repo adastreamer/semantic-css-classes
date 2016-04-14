@@ -80,8 +80,21 @@ describe("Main behaviour", function() {
     });
 
     // POSITIONS
-    numbers.forEach(function(i){
+    frame.add("<div class='p-a'></div>");
+    frame.add("<div class='p-r'></div>");
+    frame.add("<div class='p-f'></div>");
 
+    frame.add("<style> \
+      .p-ai{ position: relative; } \
+      .p-ri{ position: fixed; } \
+      .p-fi{ position: absolute; } \
+    </style>");
+
+    frame.add("<div class='p-ai'></div>");
+    frame.add("<div class='p-ri'></div>");
+    frame.add("<div class='p-fi'></div>");
+
+    numbers.forEach(function(i){
       // with !important
       // add some incorrect styles to be sure that !important works properly
       frame.add("<style> \
@@ -171,6 +184,16 @@ describe("Main behaviour", function() {
       assert.equal(frame.get(".m-t-" + i + 'i').getRawStyle("margin-top"), i + "px");
       assert.equal(frame.get(".m-b-" + i + 'i').getRawStyle("margin-bottom"), i + "px");
     });
+  });
+
+  it("has correct position values", function(){
+    assert.equal(frame.get(".p-a").getRawStyle("position"), "absolute");
+    assert.equal(frame.get(".p-r").getRawStyle("position"), "relative");
+    assert.equal(frame.get(".p-f").getRawStyle("position"), "fixed");
+
+    assert.equal(frame.get(".p-ai").getRawStyle("position"), "absolute");
+    assert.equal(frame.get(".p-ri").getRawStyle("position"), "relative");
+    assert.equal(frame.get(".p-fi").getRawStyle("position"), "fixed");
   });
 
   numbers.forEach(function(i){

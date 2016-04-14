@@ -1,4 +1,24 @@
 // POSITIONS
+
+.p-a
+  position: absolute;
+
+.p-r
+  position: relative;
+
+.p-f
+  position: fixed;
+
+.p-ai
+  position: absolute !important;
+
+.p-ri
+  position: relative !important;
+
+.p-fi
+  position: fixed !important;
+
+
 @for $i from $start through $end
   .l-#{$i * $step}
     left: 0px + $i * $step
