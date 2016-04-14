@@ -42,6 +42,21 @@ in class `[d]-[x]`:
 
 if you add the `i` char after the classname, eg. `b-20i`, the style will be applied with `!important` postfix.
 
+### alignments
+
+`v-a-t` = `vertical-align: top;`, `v-a-ti` = `vertical-align: top !important;`
+
+`v-a-m` = `vertical-align: middle;`, `v-a-mi` = `vertical-align: middle !important;`
+
+`v-a-b` = `vertical-align: bottom;`, `v-a-bi` = `vertical-align: bottom !important;`
+
+
+`t-a-l` = `text-align: left;`, `t-a-li` = `text-align: left !important;`
+
+`t-a-c` = `text-align: center;`, `t-a-ci` = `text-align: center !important;`
+
+`t-a-r` = `text-align: right;`, `t-a-ri` = `text-align: right !important;`
+
 ## installation
 
 via bower

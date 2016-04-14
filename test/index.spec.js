@@ -107,6 +107,28 @@ describe("Main behaviour", function() {
       frame.add("<div class='b-" + i + "i'></div>");
     });
 
+    // ALIGNMENTS
+    frame.add("<style> \
+      .d-ib{ display: inline-block; } \
+    </style>");
+
+    frame.add("<div class='d-ib v-a-t'></div>");
+    frame.add("<div class='d-ib v-a-m'></div>");
+    frame.add("<div class='d-ib v-a-b'></div>");
+
+    frame.add("<div class='d-ib v-a-ti'></div>");
+    frame.add("<div class='d-ib v-a-mi'></div>");
+    frame.add("<div class='d-ib v-a-bi'></div>");
+
+    frame.add("<div class='d-ib t-a-l'></div>");
+    frame.add("<div class='d-ib t-a-c'></div>");
+    frame.add("<div class='d-ib t-a-r'></div>");
+
+    frame.add("<div class='d-ib t-a-li'></div>");
+    frame.add("<div class='d-ib t-a-ci'></div>");
+    frame.add("<div class='d-ib t-a-ri'></div>");
+    // END ALIGNMENTS
+
     alreadyFilled = true;
   });
 
@@ -151,6 +173,24 @@ describe("Main behaviour", function() {
       assert.equal(frame.get(".t-" + i + 'i').getRawStyle("top"), i + "px");
       assert.equal(frame.get(".b-" + i + 'i').getRawStyle("bottom"), i + "px");
     });
+  });
+
+  it("has right alignments", function(){
+    assert.equal(frame.get(".v-a-t").getRawStyle("vertical-align"), "top");
+    assert.equal(frame.get(".v-a-m").getRawStyle("vertical-align"), "middle");
+    assert.equal(frame.get(".v-a-b").getRawStyle("vertical-align"), "bottom");
+
+    assert.equal(frame.get(".v-a-ti").getRawStyle("vertical-align"), "top");
+    assert.equal(frame.get(".v-a-mi").getRawStyle("vertical-align"), "middle");
+    assert.equal(frame.get(".v-a-bi").getRawStyle("vertical-align"), "bottom");
+
+    assert.equal(frame.get(".t-a-l").getRawStyle("text-align"), "left");
+    assert.equal(frame.get(".t-a-c").getRawStyle("text-align"), "center");
+    assert.equal(frame.get(".t-a-r").getRawStyle("text-align"), "right");
+
+    assert.equal(frame.get(".t-a-li").getRawStyle("text-align"), "left");
+    assert.equal(frame.get(".t-a-ci").getRawStyle("text-align"), "center");
+    assert.equal(frame.get(".t-a-ri").getRawStyle("text-align"), "right");
   });
 
 });
