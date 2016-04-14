@@ -32,6 +32,16 @@ in class `p-[d]-[x]`:
 
 if you add the `i` char after the classname, eg. `p-b-20i`, the style will be applied with `!important` postfix.
 
+### position
+
+in class `[d]-[x]`:
+
+`[d]` can be one of: `l`(left), `r`(right), `t`(top), `b`(bottom)
+
+`[x]` can be an integer between `-1000` and `1000` with step `5`: `-1000`, `-995`, `-990`, `-985`, ... `990`, `995`, `1000`
+
+if you add the `i` char after the classname, eg. `b-20i`, the style will be applied with `!important` postfix.
+
 ## installation
 
 via bower
