@@ -1,8 +1,10 @@
 # semantic-css-classes
 
-A set of css helper classes. Created to avoid routine css actions.
+This is a mini css framework, a set of css helper classes. Created to avoid routine css actions.
 
-Use `class='p-l-25'` instead of style `padding-left: 25px`
+For example use `class='p-l-25'` instead of style `padding-left: 25px`
+
+or `class='m-t--25i'` instead of style `margin-top: 25px!important`
 
 ## usage
 
@@ -16,6 +18,8 @@ in class `m-[d]-[x]`:
 
 `[x]` can be an integer between `-1000` and `1000` with step `5`: `-1000`, `-995`, `-990`, `-985`, ... `990`, `995`, `1000`
 
+if you add the `i` char after the classname, eg. `m-b-20i`, the style will be applied with `!important` postfix.
+
 ### padding
 
 in class `p-[d]-[x]`:
@@ -25,6 +29,8 @@ in class `p-[d]-[x]`:
 `[d]` can be one of: `l`(left), `r`(right), `t`(top), `b`(bottom)
 
 `[x]` can be an integer between `0` and `1000` with step `5`: `0`, `5`, `10`, `15`, ... `990`, `995`, `1000`
+
+if you add the `i` char after the classname, eg. `p-b-20i`, the style will be applied with `!important` postfix.
 
 ## installation
 
