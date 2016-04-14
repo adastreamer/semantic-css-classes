@@ -8,11 +8,11 @@ describe("Main behaviour", function() {
 
   var positiveNumbers = [];
   var i = 0;
-  while(positiveNumbers.push(5 * i++)<201); // array of integers from 0 to 1000 px
+  while(positiveNumbers.push(5 * i++) < 201); // array of integers from 0 to 1000 px
 
   var numbers = [];
   var i = -200;
-  while(numbers.push(5 * i++)<201); // array of integers from -1000 to 1000 px
+  while(numbers.push(5 * i++) < 401); // array of integers from -1000 to 1000 px
 
 
 
@@ -35,7 +35,7 @@ describe("Main behaviour", function() {
 
     frame.reset();
 
-    // PADDING
+    // PADDINGS
     positiveNumbers.forEach(function(i){
       frame.add("<div class='p-l-" + i + "'></div>");
       frame.add("<div class='p-r-" + i + "'></div>");
@@ -56,8 +56,8 @@ describe("Main behaviour", function() {
       frame.add("<div class='p-t-" + i + "i'></div>");
       frame.add("<div class='p-b-" + i + "i'></div>");
     });
- 
-    // MARGIN
+
+    // MARGINS
     numbers.forEach(function(i){
       frame.add("<div class='m-l-" + i + "'></div>");
       frame.add("<div class='m-r-" + i + "'></div>");
@@ -77,6 +77,34 @@ describe("Main behaviour", function() {
       frame.add("<div class='m-r-" + i + "i'></div>");
       frame.add("<div class='m-t-" + i + "i'></div>");
       frame.add("<div class='m-b-" + i + "i'></div>");
+    });
+
+    // POSITIONS
+    numbers.forEach(function(i){
+
+      // with !important
+      // add some incorrect styles to be sure that !important works properly
+      frame.add("<style> \
+        .l-" + i + "{ position: relative; } \
+        .r-" + i + "{ position: relative; } \
+        .t-" + i + "{ position: relative; } \
+        .b-" + i + "{ position: relative; } \
+        \
+        .l-" + i + "i{ position: relative; left: 987789px; } \
+        .r-" + i + "i{ position: relative; right: 987789px; } \
+        .t-" + i + "i{ position: relative; top: 987789px; } \
+        .b-" + i + "i{ position: relative; bottom: 987789px; } \
+      </style>");
+
+      frame.add("<div class='l-" + i + "'></div>");
+      frame.add("<div class='r-" + i + "'></div>");
+      frame.add("<div class='t-" + i + "'></div>");
+      frame.add("<div class='b-" + i + "'></div>");
+
+      frame.add("<div class='l-" + i + "i'></div>");
+      frame.add("<div class='r-" + i + "i'></div>");
+      frame.add("<div class='t-" + i + "i'></div>");
+      frame.add("<div class='b-" + i + "i'></div>");
     });
 
     alreadyFilled = true;
@@ -108,6 +136,20 @@ describe("Main behaviour", function() {
       assert.equal(frame.get(".m-r-" + i + 'i').getRawStyle("margin-right"), i + "px");
       assert.equal(frame.get(".m-t-" + i + 'i').getRawStyle("margin-top"), i + "px");
       assert.equal(frame.get(".m-b-" + i + 'i').getRawStyle("margin-bottom"), i + "px");
+    });
+  });
+
+  numbers.forEach(function(i){
+    it("has right positions", function(){
+      assert.equal(frame.get(".l-" + i).getRawStyle("left"), i + "px");
+      assert.equal(frame.get(".r-" + i).getRawStyle("right"), i + "px");
+      assert.equal(frame.get(".t-" + i).getRawStyle("top"), i + "px");
+      assert.equal(frame.get(".b-" + i).getRawStyle("bottom"), i + "px");
+
+      assert.equal(frame.get(".l-" + i + 'i').getRawStyle("left"), i + "px");
+      assert.equal(frame.get(".r-" + i + 'i').getRawStyle("right"), i + "px");
+      assert.equal(frame.get(".t-" + i + 'i').getRawStyle("top"), i + "px");
+      assert.equal(frame.get(".b-" + i + 'i').getRawStyle("bottom"), i + "px");
     });
   });
 

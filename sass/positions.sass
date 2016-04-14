@@ -1,0 +1,26 @@
+// POSITIONS
+@for $i from $start through $end
+  .l-#{$i * $step}
+    left: 0px + $i * $step
+
+  .r-#{$i * $step}
+    right: 0px + $i * $step
+
+  .t-#{$i * $step}
+    top: 0px + $i * $step
+
+  .b-#{$i * $step}
+    bottom: 0px + $i * $step
+
+  // !important
+  .l-#{$i * $step}i
+    left: 0px + $i * $step !important
+
+  .r-#{$i * $step}i
+    right: 0px + $i * $step !important
+
+  .t-#{$i * $step}i
+    top: 0px + $i * $step !important
+
+  .b-#{$i * $step}i
+    bottom: 0px + $i * $step !important
